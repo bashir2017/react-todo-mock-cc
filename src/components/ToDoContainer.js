@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CompletedContainer from './CompletedContainer'
 import IncompleteContainer from './IncompleteContainer'
+import TodoContainer from './IncompleteContainer'
 import NewToDoForm from './NewToDoForm'
 
 export default class ToDoContainer extends Component {
@@ -41,8 +42,9 @@ export default class ToDoContainer extends Component {
     return (
       <div id="todo-container">
         <NewToDoForm newTodoHandler={this.newTodoHandler}/>
-        <CompletedContainer deleteTodo={this.deleteTodo} todoHandler={this.todoHandler} todos={completedTasks}/>
-        <IncompleteContainer deleteTodo={this.deleteTodo} todoHandler={this.todoHandler} todos={inCompletedTasks}/>
+        {/* <CompletedContainer deleteTodo={this.deleteTodo} todoHandler={this.todoHandler} todos={completedTasks}/> */}
+        <TodoContainer deleteTodo={this.deleteTodo} todoHandler={this.todoHandler} todos={completedTasks} finished={true}/>
+        <TodoContainer deleteTodo={this.deleteTodo} todoHandler={this.todoHandler} todos={inCompletedTasks} finished={false}/>
       </div>
     );
   }

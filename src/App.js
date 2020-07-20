@@ -25,8 +25,9 @@ class App extends React.Component{
 
     let todos = this.state.todos.map(todo => {
       if(todo.id === id){
-        todo.completed = !todo.completed
-        updatedObject = todo;
+        // todo.completed = !todo.completed
+        // updatedObject = todo;
+        return {...todo, completed: !todo.completed}
       }
       return todo 
     })
